@@ -1,9 +1,9 @@
 const convertToCelsius = function(fahrenheit) {
   let cels=0;
   if (typeof fahrenheit == "number"){
-    cels = (9/5)*(fahrenheit-32);
+    cels = (fahrenheit-32)/1.8;
     if (cels%1 != 0){
-      cels = (((9/5)*(fahrenheit-32))*10)/10;
+      cels = Math.round(cels*10)/10;
     }
     return cels;
   } else {
@@ -13,10 +13,10 @@ const convertToCelsius = function(fahrenheit) {
 
 const convertToFahrenheit = function(celsius) {
   let fahr=0;
-  if (typeof fahrenheit == "number"){
-    fahr = (9/5)*(celsius+32);
+  if (typeof celsius == "number"){
+    fahr = (1.8*celsius)+32;
     if (fahr%1 != 0){
-      fahr = (((9/5)*(celsius+32))*10)/10;
+      fahr = Math.round(fahr*10)/10;
     }
     return fahr;
   } else {
